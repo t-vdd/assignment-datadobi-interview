@@ -11,7 +11,7 @@ public class FileSystemUtil {
     // Output Filename or Subdirectory goes into its subfolder tree
     void outputFilenameOrDelveDeeperInDirectory(Path currentPath, int depth) {
         if (Files.isDirectory(currentPath)) {
-            System.out.println("-".repeat(depth) + currentPath);
+            this.printDepthAndCurrentPath(currentPath, depth);
 
             // If a directory cannot be read due to permission/not existing/... we catch an IO Error
             // Else we process the item in this same method as a File or Directory
@@ -24,8 +24,13 @@ public class FileSystemUtil {
             }
 
         } else if (Files.isRegularFile(currentPath)) {
-            System.out.println("-".repeat(depth) + currentPath);
+            this.printDepthAndCurrentPath(currentPath, depth);
         }
     }
 
+
+    // Depth and path output text
+    void printDepthAndCurrentPath(Path currentPath, int depth) {
+        System.out.println("-".repeat(depth) + currentPath);
+    }
 }
