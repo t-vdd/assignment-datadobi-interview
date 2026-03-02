@@ -1,13 +1,12 @@
 package com.datadobi.assignment;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() throws IOException {
+    static void main() {
         // Get the root directory from which we start, set in our application.properties, as a File Path to work with
         Path rootDir = Path.of(ConfigReader.get("root_path"));
         FileSystemUtil util = new FileSystemUtil();
